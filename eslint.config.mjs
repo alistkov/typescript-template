@@ -1,20 +1,23 @@
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default defineConfig([
   {
-    files: ["**/*.ts"],
+    files: ['**/*.ts'],
     languageOptions: {
       globals: globals.node,
-      sourceType: "module",
+      sourceType: 'module',
     },
-    plugins: {},
+    plugins: {
+      eslintConfigPrettier,
+    },
     rules: {
-      "@typescript-eslint/no-unused-vars": "warn",
-      "no-console": "warn",
-      "semi": ["error", "always"],
-      "quotes": ["warn", "single"],
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-console': 'warn',
+      semi: ['error', 'always'],
+      quotes: ['warn', 'single'],
       'lines-between-class-members': 'warn',
     },
   },
